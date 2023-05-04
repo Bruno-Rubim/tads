@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <div>
+        <h3>
+            link da imagem
+        </h3>
+        <input id="link" type="text">
+        <h3>
+            <button onclick="applyLink()">
+                Carregar
+            </button>
+        </h3>
+        <img src="" style=" width: 400px;">
+        </button>
+    </div>
+<script>
+    function applyLink() {
+        let link = document.querySelector('#link').value;
+        let img = document.querySelector('img');
+        img.src = link;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+<body>
+    <div>
+        <h3>
+            Conceitos:
+        </h3>
+        <h3>
+        <input id="conceito1" type="text">
+        </h3>
+        <h3>
+        <input id="conceito2" type="text">
+        </h3>
+        <h3>
+        <input id="conceito3" type="text">
+        </h3>
+        <h3>
+        <input id="conceito4" type="text">
+        </h3>
+            <button onclick="calcularMedia()">
+                Calcular Media
+            </button>
+        </h3>
+        <p></p>
+    </div>
+<script>
+    function converter(conceito) {
+        switch (conceito){
+            case 'A':
+            case 'a':
+            return 10;
+            break;
+            case 'B':
+            case 'b':
+            return 8;
+            break;
+            case 'C':
+            case 'c':
+            return 6;
+            break;
+            case 'D':
+            case 'd':
+            return 3;
+            break;
+            default:
+            return "conceito inválido";
+            break;
+        }
+    }
+    function calcularMedia() {
+        let conceito1 = document.querySelector("#conceito1").value;
+        let conceito2 = document.querySelector("#conceito2").value;
+        let conceito3 = document.querySelector("#conceito3").value;
+        let conceito4 = document.querySelector("#conceito4").value;
+
+        conceito1 = converter(conceito1);
+        conceito2 = converter(conceito2);
+        conceito3 = converter(conceito3);
+        conceito4 = converter(conceito4);
+
+        let p = document.querySelector("p");
+        p.innerText = (conceito1 + conceito2 + conceito3 + conceito4)/4
+
+    }
+</script>
+</body>
+</html>

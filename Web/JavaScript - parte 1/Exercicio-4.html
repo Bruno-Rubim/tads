@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <div>
+        <h3>
+            Conceito:
+        </h3>
+        <input type="text">
+        <h3>
+            <button onclick="converter()">
+                Converter
+            </button>
+        </h3>
+        <p></p>
+    </div>
+<script>
+    function converter() {
+        let conceito = document.querySelector("input").value
+        let valor;
+        switch (conceito){
+            case 'A':
+            case 'a':
+            valor = 10;
+            break;
+            case 'B':
+            case 'b':
+            valor = 8;
+            break;
+            case 'C':
+            case 'c':
+            valor = 6;
+            break;
+            case 'D':
+            case 'd':
+            valor = 3;
+            break;
+            default:
+            valor = "conceito inválido";
+            break;
+        }
+
+        let p = document.querySelector("p");
+        p.innerText = valor;
+    }
+</script>
+</body>
+</html>

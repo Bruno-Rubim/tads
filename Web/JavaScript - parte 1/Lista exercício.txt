@@ -1,0 +1,9 @@
+Lista exercício (Document object model)
+
+Todos os exercícios usar:
+
+usar input
+usar querySelector
+não usar form
+
+5) Continuação do exercício 4. Agora o usuário pode entrar com 4 conceitos e o script calcula a nota média de acordo com a conversão conceito-valor definida no exercício 4.
