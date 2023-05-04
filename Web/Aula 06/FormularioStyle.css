@@ -1,0 +1,15 @@
+body{
+    color: #000;
+    zoom: 200%;
+}
+form{
+    display: grid;
+    grid-template-columns: 50px 175px;
+    gap: 20px;
+}
+label{
+    justify-self: left;
+}
+button{
+    grid-column: 2;
+}

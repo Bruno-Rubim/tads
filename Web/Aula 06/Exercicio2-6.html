@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exercicio2</title>
+    <link rel="stylesheet" href="Exercicio2-6Style.css">
+</head>
+<body>
+    <main>
+        <form>
+            <label class="esq">Nome</label>
+            <label>
+                <input type="text" name="name" minlength="3" placeholder="Nome" required>
+            </label>
+            <label class="esq">Email</label>
+            <input type="text" name="email" placeholder="user@example.org" required>
+            <label class="esq">Password</label>
+            <input type="password" name="password" minlength="6" maxlength="10" placeholder="6-10 caracteres" required>
+            <label class="esq">Possúi Conhecimento?</label>
+            <label>
+                <input type="checkbox" name="conhecimento"> JavaScript
+                <input type="checkbox" name="conhecimento"> HTML
+                <input type="checkbox" name="conhecimento"> CSS
+            </label>
+            <label class="esq">Curso</label>
+            <label>
+                <select name="Curso">
+                    <option selected>--Selecione--</option>
+                    <option>Análise e Desenvolvimento</option>
+                    <option>Física</option>
+                    <option>Matemática</option>
+                </select>
+            </label>
+            <label class="esq">Turno</label>
+            <label>
+                <input type="radio" name="turno"> Tarde
+                <input type="radio" name="turno"> Noite
+            </label>
+            <label class="esq">Motivo matrícula</label>
+            <textarea rows="5"></textarea>
+        </form>
+        <button class="esq">enviar</button>
+    </main>
+</body>
+</html>

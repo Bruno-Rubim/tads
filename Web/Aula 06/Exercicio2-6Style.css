@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+body{
+    font-family: "Roboto";
+    zoom: 150%;
+}
+main{
+    padding: 30px;
+    margin: auto;
+    width: 40%;
+}
+form{
+    display: grid;
+    grid-template-columns: 170px 250px;
+    gap: 25px;
+    size: 50px;
+    justify-content: center;
+}
+input{
+    padding: 5px;
+}
+select{
+    padding: 5px;
+    width: 250px;
+}
+input:invalid{
+    color: red;
+}
+.esq{
+    justify-self: right;
+}
+label{
+    align-self: right;
+}
+button{
+    margin-top: 20px;
+}

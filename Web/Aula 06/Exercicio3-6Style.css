@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+body{
+    font-family: "Roboto";
+    background-image: url(https://news.uchicago.edu/sites/default/files/styles/explainer_hero/public/images/2022-09/earth-at-night.jpg?h=944f5cba&itok=h4nYkMUj);
+    background-repeat: no-repeat;
+    color: #0cd894;
+    background-size: cover;
+    zoom: 150%;
+}
+main{
+    background-color: rgba(132, 245, 207, 0.123);
+    padding: 30px;
+    width: 90%;
+    border: #0cd894 solid 1px;
+    border-radius: px;
+    text-align: center;
+}
+.titulo{
+    color: #fff;
+}
+form{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 200px 500px;
+    gap: 10px;
+    size: 50px;
+    justify-content: left;
+    align-items: center;
+}
+input{
+    border: #024470 solid;
+    border-radius: 1px;
+    padding: 5px;
+}
+select{
+    border: #024470 solid;
+    border-radius: 1px;
+    padding: 5px;
+}
+.esq{
+    justify-self: right;
+}
+label{
+    align-self: right;
+}
+button{
+    grid-column: 2;
+}
+.small{
+    width: 86px;
+}

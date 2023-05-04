@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+html, body{
+    /*remover todo e qualquer espaço existente na body e na html*/
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /* a pagina ocupa no "minimo" toda a tela na vertical*/
+    min-height: 100vh;
+
+    /* definir que a body é um flexBox*/
+    display: flex;
+
+    /* define que os elmentos (filhos da body) aparecem em coluna*/
+    flex-direction: column;
+    font-family: "Rubik";
+    background-color: #ffaf87;
+    padding: 10px;
+    color: #251605;
+}
+.topo {
+    text-align: center;
+    background-color: #ed6a5e;
+}
+h1{
+    padding-top: 30px;
+}
+.conteudo{
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: left; /*centralização horisontal*/
+}
+.conteudo p{
+    background-color: #377771;
+    width: 250px;
+    padding: 20px;
+}
+.menu .sair{
+    color: rgb(172, 0, 0);
+    margin-left: auto;
+}
+.menu{
+    margin: 0px 20px 0px px;
+    background-color: #FF8E72;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+}
+.menu a{
+    /* regra por condição: somente os links dentro
+    do menu recebem esse estilo */
+    text-decoration: none;
+    padding: 0px 10px;
+    border-radius: 5px;
+}
+.menu a:hover{
+    background-color: rgb(255, 216, 179);
+    /*border-radius: 50%;*/
+}
+.rodape{
+    background-color: #377771;
+    padding: 20px;
+}
+.container{
+     /*border: 1px solid darkcyan;*/
+    flex: 1 0 auto;
+}

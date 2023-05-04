@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<body>
+    <div>
+        <h3>
+            Insira a temperatura em celsius
+        </h3>
+            <input type="number">
+        <h2>
+            <button onclick="calcular('')()">
+                Calcular Fahrenheit
+            </button>
+        </h2>
+        <p>
+        </p>
+    </div>
+<script>
+    function calcular() {
+        let n1 = Number(document.querySelector('input').value);
+        let p = document.querySelector('p');
+        p.innerText = ((n1 * 1.8) + 32) + "°F";
+    }
+</script>
+</body>
+</html>

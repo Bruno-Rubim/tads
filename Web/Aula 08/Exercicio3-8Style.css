@@ -1,0 +1,19 @@
+body{
+    zoom: 200%;
+}
+table{
+    border-spacing: 1px;
+    background-color: black;
+}
+th{
+    background-color: #6E6E6E;
+    padding: 5px;
+    color: #fff;
+}
+img{
+    height: 50px;
+}
+td{
+    background-color: #fff;
+    padding: 5px;
+}

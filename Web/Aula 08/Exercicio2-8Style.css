@@ -1,0 +1,24 @@
+body{
+    zoom: 200%;
+}
+table{
+    border-spacing: 1px;
+    background-color: black;
+}
+th{
+    background-color: #97CBFA;
+    padding: 5px;
+}
+.top{
+    background-color: #f3d57c;
+}
+td{
+    background-color: #fff;
+    padding: 5px;
+}
+.bottom{
+    background-color: #E6e6e6;
+    padding: 5px;
+    font-size: 7px;
+    text-align: center;
+}

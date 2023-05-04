@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    <div>
+        <h3>
+            Valor em dolar
+        </h3>
+        <input type="number" placerholder="Valor" name="dolar">
+        <h3>
+            <button onclick="calculate()">
+                Calcular valor em reais
+            </button>
+        </h3>
+        <p>
+        </p>
+        </button>
+    </div>
+<script>
+    function calculate() {
+        let valor = document.querySelector('input').value;
+        let p = document.querySelector('p');
+        p.innerText = "Valor em reais " + valor*5.21    ;
+    }
+</script>
+</body>
+</html>

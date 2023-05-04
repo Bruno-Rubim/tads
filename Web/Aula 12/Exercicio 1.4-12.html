@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+<body>
+    <div>
+        <h3>
+            Insira 3 números
+        </h3>
+            <input id="N1" type="number">
+            <input id="N2" type="number">
+            <input id="N3" type="number">
+        <h2>
+            <button onclick="media('')()">
+                Calcular média
+            </button>
+        </h2>
+        <p>
+        </p>
+    </div>
+<script>
+    function media() {
+        let n1 = Number(document.querySelector('#N1').value);
+        let n2 = Number(document.querySelector('#N2').value);
+        let n3 = Number(document.querySelector('#N3').value);
+        let p = document.querySelector('p');
+        p.innerText = "Média: " + ((n1 + n2 + n3)/3);
+    }
+</script>
+</body>
+</html>

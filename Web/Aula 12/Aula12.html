@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 12</title>
+</head>
+<body>
+    <div>
+        <h3>
+            Preço
+        </h3>
+        <input type="number" placerholder="Preço" name="preco">
+        <h3>
+            <button onclick="calculate()">
+                Calcular desconto 10%
+            </button>
+        </h3>
+        <p>
+        </p>
+        </button>
+    </div>
+<script>
+    function calculate() {
+        let valor = document.querySelector('input').value;
+        let p = document.querySelector('p');
+        p.innerText = "Valor com desconto " + valor*0.9;
+    }
+</script>
+</body>
+</html>

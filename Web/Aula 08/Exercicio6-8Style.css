@@ -1,0 +1,53 @@
+body{
+    zoom: 170%;
+    color: navy;
+}
+.container{
+    height: auto;
+}
+.topo{
+    text-align: center;
+    background-color: #D1B48C;
+    padding: 10px;
+}
+.semi{
+    text-align: center;
+    background-color: #D1B48C;
+    padding: 5px;
+}
+.nav{
+    background-color: #D1B48C;
+    height: 45%;
+    padding: 5px;
+}
+.nav div{
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 7px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+#produtos{
+    background-color: #90EE90;
+}
+.conteudo{
+    display: grid;
+    grid-template-columns: 1fr 4fr 0.5fr;
+    height: 64%;
+}
+h3 {
+    color: navy;
+    border-bottom: 1px solid navy;
+}
+a{
+    color: yellow;
+}
+label{
+    margin-left: 25px;
+}
+.rodape{
+    background-color: #aeaeae;
+    color: #000;
+    padding: 3%;
+    text-align: center;
+}
