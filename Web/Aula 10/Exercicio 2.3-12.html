@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+</head>
+<body>
+    <div>
+        <h3>
+            Valor do carro
+        </h3>
+        <input id="Valor" type="number">
+        <h3>
+            Ano de fabricação
+        </h3>
+        <input id="Ano" type="number">
+        <h2>
+            <button onclick="calcular()">
+                Calcular Seguro
+            </button>
+        </h2>
+        <h1></h1>
+    </div>
+<script>
+    function calcular() {
+        let valor = Number(document.querySelector('#Valor').value);
+        let ano = Number(document.querySelector('#Ano').value);
+        let h1 = document.querySelector('h1');
+        if (ano <= 2015) {
+            h1.innerText = valor*0.15;
+        } else if (ano > 2020) {
+            h1.innerText = valor*0.05;
+        } else {
+            h1.innerText = valor*0.1;
+        }
+    }
+</script>
+</body>
+</html>
