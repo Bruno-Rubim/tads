@@ -1,0 +1,12 @@
+#form{
+	display: grid;
+	grid-template-columns: auto 1fr;
+	width: 20%;
+	grid-gap: 2px;
+}
+
+#container{
+	border: solid #137213;
+	padding: 20px;
+	width: 80%;
+}

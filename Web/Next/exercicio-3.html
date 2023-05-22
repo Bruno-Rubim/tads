@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./exercicio-3.css">
+    <title>Exercicio 3</title>
+</head>
+<body>
+    <h2>Orçamento</h2>
+    <div class="container">
+        <div>Item: </div>
+        <input type="text">
+        <div>valor: </div>
+        <input class="number" type="number" id="valor1">
+        <div>quantidade: </div>
+        <input class="number" type="number" id="quantidade1">
+        <button onclick = "calculate1()">=</button>
+        <div class="total" id="total1">R$:</div>
+    </div>
+    <div class="container">
+        <div>Item: </div>
+        <input type="text">
+        <div>valor: </div>
+        <input class="number" type="number" id="valor2">
+        <div>quantidade: </div>
+        <input class="number" type="number" id="quantidade2">
+        <button onclick = "calculate2()">=</button>
+        <div class="total" id="total2">R$:</div>
+    </div>
+    <div class="container">
+        <div>Item: </div>
+        <input type="text">
+        <div>valor: </div>
+        <input class="number" type="number" id="valor3">
+        <div>quantidade: </div>
+        <input class="number" type="number" id="quantidade3">
+        <button onclick = "calculate3()">=</button>
+        <div class="total" id="total3">R$:</div>
+    </div>
+    <button id="buttonMega" onclick = "calculateMega()">calcular</button>
+    <div id="totalMega">R$:</div>
+
+</body>
+<script src="./exercicio-3.js"></script>
+</html>

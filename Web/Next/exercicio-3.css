@@ -1,4 +1,4 @@
-#container{
+.container{
     display: grid;
     grid-template-columns: repeat(8, auto);
    	justify-content: left;
@@ -7,10 +7,23 @@
     padding: 3px;
 }
 
-#total {
+.total {
     background-color: #98ec94;
 	width: 100px;
     padding: 5px;
+}
+
+#totalMega{
+	padding: 10px;
+	background-color: #87cefa;
+	font-size: 20px;
+	width: 200px;
+	margin: 10px;
+}
+
+#buttonMega{
+	font-size: 15px;
+	margin: 5px;
 }
 
 input{
