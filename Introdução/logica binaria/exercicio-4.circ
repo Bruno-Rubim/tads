@@ -63,10 +63,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(160,250)" to="(180,250)"/>
     <wire from="(190,150)" to="(190,210)"/>
     <wire from="(160,200)" to="(180,200)"/>
-    <comp lib="0" loc="(160,250)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="Y"/>
-    </comp>
+    <comp lib="1" loc="(210,250)" name="NOT Gate"/>
     <comp lib="0" loc="(160,150)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="W"/>
@@ -77,16 +74,19 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="label" val="Z"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="1" loc="(210,250)" name="NOT Gate"/>
-    <comp lib="1" loc="(290,230)" name="OR Gate">
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="1" loc="(380,210)" name="AND Gate">
-      <a name="inputs" val="2"/>
+    <comp lib="0" loc="(160,250)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Y"/>
     </comp>
     <comp lib="0" loc="(160,200)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="X"/>
+    </comp>
+    <comp lib="1" loc="(380,210)" name="AND Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="1" loc="(290,230)" name="OR Gate">
+      <a name="inputs" val="2"/>
     </comp>
   </circuit>
 </project>
