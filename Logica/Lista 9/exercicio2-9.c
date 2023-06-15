@@ -6,12 +6,12 @@ int main(){
 
     for (int i = 0; i < tam; ++i){
         for (int j = 0; j < tam; ++j){
-            printf("manda um numero: ");
+            printf("Insira um numero: ");
             scanf("%f", &resp);
             m[i][j] = resp;
         }
     }
-    printf("manda um numero pra linha: ");
+    printf("Insira um numero pra linha: ");
     scanf("%d", &linha);
     for (int j = 0; j < tam; ++j){
         printf("%.1f ", m[linha][j]);
