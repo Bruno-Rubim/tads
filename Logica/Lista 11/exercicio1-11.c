@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #define TAM 100
-#define TAM_NOME 12
+#define TAM_NOME 30
 
 #if 0
 	#define lerStr(s) fgets(s, sizeof(s), stdin)
@@ -40,6 +40,7 @@ int main () {
 		scanf("%f", &cadastro[i].altura);
 		printf("insira o peso: ");
 		scanf("%f", &cadastro[i].peso);
+		printf("\n");
 	}
 	printf("\nCadastro concluido\n");
 	
@@ -109,7 +110,7 @@ int main () {
 		case 'C':
 			printf("Insira o codigo da pessoa a ser excluida: ");
 			scanf(" %d", &respInt);
-			int i = 0;
+			i = 0;
 			while (i < n && cadastro[i].codigo != respInt) {
 				i++;
 			}
@@ -124,7 +125,7 @@ int main () {
 		case 'D':
 			printf("Insira o codigo da pessoa a ser consultada: ");
 			scanf(" %d", &respInt);
-			int i = 0;
+			i = 0;
 			while (i < n && cadastro[i].codigo != respInt) {
 				i++;
 			}
@@ -140,11 +141,23 @@ int main () {
 			}
 			break;
 		case 'E':
+			i = 0;
+			while (i < n) {
+				printf("Codigo: %d\n", cadastro[i].codigo);
+				printf("Nome: %s\n", cadastro[i].nome);
+				printf("Idade: %d\n", cadastro[i].idade);
+				printf("Genero: %c\n", cadastro[i].genero);
+				printf("Altura: %g\n", cadastro[i].altura);
+				printf("Peso: %g\n\n", cadastro[i].peso);		
+				i++;
+			}
 			break;
 		default:
 			break;
 		}
-		printf("Ctrl+C");
+		printf("Ctrl+C para sair do programa ou M para voltar ao menu: ");
+		scanf(" %*c");
+		printf("\n");
 	}
 	return 0;
 }
