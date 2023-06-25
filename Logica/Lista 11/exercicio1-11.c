@@ -16,6 +16,7 @@ struct TPessoa {
 	char genero;
 	float altura;
 	float peso;
+	float salario;
 };
 
 int main () {
