@@ -1,0 +1,15 @@
+Determinada memória tem capacidad de 16k x 8 bits:
+
+Quantas linhas de entrada/saída de dados tem esta memória;
+8
+
+Quantas linhas de endereço ela tem?
+2^14 = 16384
+
+Qual a capacidade em Bytes?
+16384
+
+Quantas entradas de endereço, entrada e saída de dados são necessárias para uma memória de 1M Bytes?
+20 E endereço
+8 E dados
+8 S dados
