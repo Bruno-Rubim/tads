@@ -32,13 +32,13 @@
     (identificar os campos por número como opções do menu) e o usuário pode escolher somente um
     campo por vez, mas o menu deve permanecer enquanto o usuário não escolher a opção de sair
     do modo de edição.
-
-    feito
-
     10) Por fim, o programa permitirá ao usuário escolher entre funcionalidades (cadastro, cálculo de
     salário, quantidade maior que a média, e edição e visualização das informações de um
     determinado funcionário). O usuário poderá escolher as funcionalidades por meio de um menu,
     podendo repeti-las até que ele deseje sair do programa.
+
+    feito
+
 */
 
 #include <stdio.h>
@@ -68,6 +68,7 @@ int lerNumCadastros(){
     int n;
     printf("Insira o numero de cadastros: ");
     scanf("%d%*c", &n);
+    printf("\n");
     return n;
 }
 
@@ -131,7 +132,7 @@ void alterarDados(struct TFuncionario cadastro[], int size){
         i++;
     }
     if (i >= size) {
-        puts("Nome nao encontrado");
+        puts("Nome nao encontrado\n");
     } else {
         int done = 0;
         while (!done) {
@@ -199,7 +200,7 @@ void calcularSalario(struct TFuncionario cadastro[], int size){
         i++;
     }
     if (i >= size) {
-        puts("Nome nao encontrado");
+        puts("Nome nao encontrado\n");
     } else {
         updateSalario(&cadastro[i]);
         printf("\nSalario de %s R$:%.2f\n\n", nome, cadastro[i].salario);
