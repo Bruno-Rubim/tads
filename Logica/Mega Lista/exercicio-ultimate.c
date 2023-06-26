@@ -27,14 +27,13 @@
     Produtividade))
     8) O programa deve ainda disponibilizar, também por uma função, a quantidade de funcionários
     que ganham acima da média.
-
-    feito
-
     9) Alterar os dados de um funcionário (informado pelo usuário através do nome.); Dentro da opção
     de Alterar, será necessário incluir um novo menu solicitando qual dos campos se deseja alterar
     (identificar os campos por número como opções do menu) e o usuário pode escolher somente um
     campo por vez, mas o menu deve permanecer enquanto o usuário não escolher a opção de sair
     do modo de edição.
+
+    feito
 
     10) Por fim, o programa permitirá ao usuário escolher entre funcionalidades (cadastro, cálculo de
     salário, quantidade maior que a média, e edição e visualização das informações de um
@@ -44,6 +43,7 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 #define NAME_LENGTH 30
 
 struct TFuncionario{
@@ -64,7 +64,7 @@ void lerStr(char str[], int size) {
     }
 }
 
-int iniciarCadastro(){
+int lerNumCadastros(){
     int n;
     printf("Insira o numero de cadastros: ");
     scanf("%d%*c", &n);
@@ -115,89 +115,135 @@ int qtdAcimaMedia(struct TFuncionario cadastro[], int size){
             break;
         }
     }
-    printf("%d", n);
+    printf("%d funcionario(s) com o salario acima da media\n\n", n);
     return n;
 }
 
 void alterarDados(struct TFuncionario cadastro[], int size){
     char nome[NAME_LENGTH];
-    printf("Insira o codigo da pessoa a ser alterada: ");
+    int resp = 0;
+    printf("Insira o nome do funcionario ");
     lerStr(nome, NAME_LENGTH);
+    printf("\n");
+
     int i = 0;
-    while (i < size && !strcmp(cadastro[i].nome, nome)) {
+    while (i < size && strcmp(cadastro[i].nome, nome)) {
         i++;
     }
-    /*
-    if (i >= n) {
+    if (i >= size) {
         puts("Nome nao encontrado");
     } else {
         int done = 0;
         while (!done) {
-            printf("1. Codigo: %d\n", cadastro[i].codigo);
-            printf("2. Nome: %s\n", cadastro[i].nome);
-            printf("3. Idade: %d\n", cadastro[i].idade);
-            printf("4. Genero: %c\n", cadastro[i].genero);
-            printf("5. Altura: %g\n", cadastro[i].altura);
-            printf("6. Peso: %g\n", cadastro[i].peso);
-            printf("Insira a informacao a ser alterada ou 0 para sair: ");
-            scanf("%d%*c", &respInt);
-            switch (respInt) {
+            printf("1. Nome: %s\n", cadastro[i].nome);
+            printf("2. Grau de estudo: %d\n", cadastro[i].grauEstudo);
+            printf("3. Quantidades de linguas que fala: %d\n", cadastro[i].linguas);
+            printf("4. Nivel do cargo que ocupa: %d\n", cadastro[i].cargoNivel);
+            printf("5. Indice de produtividade: %g\n", cadastro[i].produtividade);
+            printf("\nInsira a informacao a ser alterada ou 0 para sair: ");
+            scanf("%d%*c", &resp);
+            switch (resp) {
             case 1:
-                printf("Insira o novo codigo: ");
-                scanf("%d", &cadastro[i].codigo);
+                printf("Insira o novo nome: ");
+                lerStr(cadastro[i].nome, NAME_LENGTH);
                 break;
             case 2:
-                printf("Insira o novo nome: ");
-                lerStr(cadastro[i].nome);
+                printf("Insira o novo grau de estudo: ");
+                scanf("%d", &cadastro[i].grauEstudo);
                 break;
             case 3:
-                printf("Insira a nova idade: ");
-                scanf("%d", &cadastro[i].idade);
+                printf("Insira a nova quantidade de linguas: ");
+                scanf("%d", &cadastro[i].linguas);
                 break;
             case 4:
-                printf("Insira o novo genero: ");
-                scanf(" %c", &cadastro[i].genero);
+                printf("Insira o novo nivel do cargo: ");
+                scanf("%d", &cadastro[i].cargoNivel);
                 break;
             case 5:
-                printf("Insira a nova altura: ");
-                scanf("%f", &cadastro[i].altura);
-                break;
-            case 6:
-                printf("Insira o novo peso: ");
-                scanf("%f", &cadastro[i].peso);
+                printf("Insira o novo indice de produtividade: ");
+                scanf("%f", &cadastro[i].produtividade);
                 break;
             default:
                 done = 1;
                 break;
             }
+            printf("\n");
         }
+        updateSalario(&cadastro[i]);        
     }
-            */
 }
 
 void lerDadosCadastros(struct TFuncionario cadastro[], int size){
     for (int i = 0; i < size; i++){
-        printf("insira o nome: ");
+        printf("Insira o nome: ");
         lerStr(cadastro[i].nome, sizeof(cadastro[i].nome));
-        printf("insira o grau de estudo: ");
+        printf("Insira o grau de estudo: ");
         scanf("%d", &cadastro[i].grauEstudo);
-        printf("insira a quantidade de linguas que fala: ");
+        printf("Insira a quantidade de linguas que fala: ");
         scanf("%d", &cadastro[i].linguas);
-        printf("insira o nivel do cargo: ");
+        printf("Insira o nivel do cargo: ");
         scanf("%d", &cadastro[i].cargoNivel);
-        printf("insira a produtividade: ");
+        printf("Insira o indice de produtividade: ");
         scanf("%f%*c", &cadastro[i].produtividade);
         updateSalario(&cadastro[i]);        
         printf("\n");
     }
 }
 
+void calcularSalario(struct TFuncionario cadastro[], int size){
+    char nome[NAME_LENGTH];
+    printf("Insira o nome do funcionario: ");
+    lerStr(nome, NAME_LENGTH);
+    int i = 0;
+    while (i < size && strcmp(cadastro[i].nome, nome)) {
+        i++;
+    }
+    if (i >= size) {
+        puts("Nome nao encontrado");
+    } else {
+        updateSalario(&cadastro[i]);
+        printf("\nSalario de %s R$:%.2f\n\n", nome, cadastro[i].salario);
+    }
+}
+
+void menu(struct TFuncionario cadastro[], int size) {
+    int quit = 0, respMenu;
+    while (!quit) {
+        puts("1. Calculo de salario");
+        puts("2. Numero de funcionarios acima da media");
+        puts("3. Alterar/Vizualizar dados de um cadastro");
+        puts("0. Sair");
+        puts("");
+        printf("Insira a operacao desejada: ");
+        scanf("%d%*c", &respMenu);
+        printf("\n");
+        switch (respMenu) {
+        case 1:
+            calcularSalario(cadastro, size);
+            break;
+        case 2:
+            qtdAcimaMedia(cadastro, size);
+            break;
+        case 3:
+            alterarDados(cadastro, size);
+            break;
+        case 0:
+            quit = 1;
+            break;
+        default:
+            printf("Operacao nao encontrada");
+            break;
+        }
+    }
+}
+
 int main(){
 
-    int numCadastros = iniciarCadastro();
+    puts("Bem vindo ao programa de cadastro");
+    int numCadastros = lerNumCadastros();
     struct TFuncionario cadastro[numCadastros];
     lerDadosCadastros(cadastro, numCadastros);
-    qtdAcimaMedia(cadastro, numCadastros);
+    menu(cadastro, numCadastros);
 
     return 0;
 }
