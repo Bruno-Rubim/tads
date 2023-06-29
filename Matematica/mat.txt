@@ -35,7 +35,8 @@
 
 4. Dados os conjuntos 𝐴 = {1, 2, 3}, 𝐵 = {3, 4} e 𝐶 = {1, 2, 4} determine o conjunto 𝑋 tal que 𝑋 ∪ 𝐵 = 𝐴 e 𝑋 ∩ 𝐵 = ∅.
 
-X = *
+X =
+*p
 
 5. Determine o intervalo proposto:
 [−1, 3] ∩ [1, 4] = [1, 3]
@@ -116,6 +117,7 @@ EOIA T R
 14.Uma prova consta de 15 questões, das quais o aluno deve resolver 10. De quantas formas ele poderá escolher as 10 questões?
 
 15!/5! = 10897286400
+*p
 
 15. Dez clubes de futebol disputaram um campeonato em dois turnos. No final, dois clubes empataram na primeira colocação, havendo mais um jogo de desempate. Quantos jogos foram disputados?
 
@@ -123,34 +125,33 @@ EOIA T R
 
 16.Existem 10 jogadores de futebol de salão, entre eles João, que por sinal é o único que joga como goleiro. Nessas condições, quantos times de 5 pessoas podem ser escalados?
 
-9 * 8 * 7 * 6 * 5 = 15120 sem joao
-9 * 8 * 7 * 6 3024 com joao
-total 18144
+9!/(5!*4!) = 126
+*p
 
 17.Um time de futebol de salão deve ser escalado a partir de um conjunto de 10 jogadores (entre eles Ari e Arnaldo). De quantas formas isso pode ser feito, se Ari e Arnaldo devem necessariamente ser escalados?
 
 A   A  resto
 5 * 4 * 8 * 7 * 6 = 6720
+*p
 
 18.Um grupo consta de 20 pessoas, das quais 5 matemáticos. De quantas formas podemos formar comissões de 10 pessoas de modo que:
 
 a) nenhum membro seja matemático?
-15!/5! = 10897286400
+15!/(5!*10!) = 3003
 
 b) todos os matemáticos participem da comissão?
-15!/10! = 360360
+15!/(10!*5!) = 3003
 
 c) haja exatamente um matemático na comissão?
-(15!/6!) * 5 = 9081072000
+15!/(6!*9!) * 5 = 25025
 
 d) pelo menos um membro da comissão seja matemático?
-(19!/10!) * 5 
+20!/(10!*10!) - 3003 = 181753
 
 19.De um grupo de 10 pessoas deseja-se formar uma comissão com 5 membros. De quantas formas isso pode ser feito, se duas pessoas (A e B) ou fazem parte da comissão, ou não?
 
-AB + 8 pessoas = 9
-
-9!/4! = 16791600
+8!/(4!*3!) + 8!/(3!*5!) = 336
+*
 
 20. De quantas formas 8 sinais “+” e 4 sinais “–” podem ser colocados em uma sequência?
 
@@ -173,9 +174,16 @@ ESSTTTAAÍIC
 
 39916800/24 = 1663200
 
-23.Quantos números de 7 algarismos existem nos quais comparecem uma só vez os algarismos 3, 4, 5 e quatro vezes o algarismo 9?
+(contando Í como igual de I)
 
-7 digitos*
+ESSTTTAAIIC
+
+11!/(2!*3!*2!*2!)
+
+39916800/48 = 831600
+*
+
+23.Quantos números de 7 algarismos existem nos quais comparecem uma só vez os algarismos 3, 4, 5 e quatro vezes o algarismo 9?
 
 3459999
 
