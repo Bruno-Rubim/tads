@@ -35,13 +35,12 @@
 
 4. Dados os conjuntos 𝐴 = {1, 2, 3}, 𝐵 = {3, 4} e 𝐶 = {1, 2, 4} determine o conjunto 𝑋 tal que 𝑋 ∪ 𝐵 = 𝐴 e 𝑋 ∩ 𝐵 = ∅.
 
-X = {1, 2}
-*
+X = *
 
 5. Determine o intervalo proposto:
 [−1, 3] ∩ [1, 4] = [1, 3]
-[−1, 3[ ∩ ]2, 5[ = [1, 2]
-]3, 5] ∪ [2, 4[ = [2, 3]
+[−1, 3[ ∩ ]2, 5[ = ]2, 3[
+]3, 5] ∪ [2, 4[ = [2, 5]
 ]2, 5] − ]1, 3[ = [3, 5]
 
 6. A figura representa o desenho da arcada dentária de um animal, feito no plano cartesiano ortogonal em escala linear.
@@ -86,8 +85,6 @@ a + b = 9,5
 
 20 * 19 * 18 = 6840
 
-8 * 7 * 6 * 5 * 4 = 6720
-
 11.Designando-se seis cidades por A, B, C, D, E e F, determine o número de maneiras que permitem a ida de A até F, passando por todas as demais cidades.
 
 4 * 3 * 2 = 24
@@ -107,7 +104,7 @@ c) Quantos anagramas começam por T e terminam com A?
 4! = 24
 
 d) Quantos anagramas começam por vogal?
-3 * 5! = 360
+4 * 5! = 480
 
 e) Quantos anagramas têm as vogais juntas? 
 
@@ -120,9 +117,9 @@ EOIA T R
 
 15!/5! = 10897286400
 
-15.Dez clubes de futebol disputaram um campeonato em dois turnos. No final, dois clubes empataram na primeira colocação, havendo mais um jogo de desempate. Quantos jogos foram disputados?
+15. Dez clubes de futebol disputaram um campeonato em dois turnos. No final, dois clubes empataram na primeira colocação, havendo mais um jogo de desempate. Quantos jogos foram disputados?
 
-10 * 9 * 2 + 1 = 181
+10 * 9 * 2 / 2 + 1 = 91
 
 16.Existem 10 jogadores de futebol de salão, entre eles João, que por sinal é o único que joga como goleiro. Nessas condições, quantos times de 5 pessoas podem ser escalados?
 
@@ -132,13 +129,13 @@ total 18144
 
 17.Um time de futebol de salão deve ser escalado a partir de um conjunto de 10 jogadores (entre eles Ari e Arnaldo). De quantas formas isso pode ser feito, se Ari e Arnaldo devem necessariamente ser escalados?
 
-8 * 7 * 6 = 336
+A   A  resto
+5 * 4 * 8 * 7 * 6 = 6720
 
 18.Um grupo consta de 20 pessoas, das quais 5 matemáticos. De quantas formas podemos formar comissões de 10 pessoas de modo que:
 
 a) nenhum membro seja matemático?
 15!/5! = 10897286400
-
 
 b) todos os matemáticos participem da comissão?
 15!/10! = 360360
