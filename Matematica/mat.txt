@@ -131,7 +131,6 @@ EOIA T R
 16.Existem 10 jogadores de futebol de salão, entre eles João, que por sinal é o único que joga como goleiro. Nessas condições, quantos times de 5 pessoas podem ser escalados?
 
 9!/(5!*4!) = 126
-*p
 
 17.Um time de futebol de salão deve ser escalado a partir de um conjunto de 10 jogadores (entre eles Ari e Arnaldo). De quantas formas isso pode ser feito, se Ari e Arnaldo devem necessariamente ser escalados?
 
