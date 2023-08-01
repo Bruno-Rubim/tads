@@ -1,0 +1,48 @@
+Classe: Televisor
+-----------------
+string marca
+string tipoTela
+string modelo
+string resolucao
+float comprimentoDiagonal
+float preço
+int voltagem
+------------------
+
+
+
+Classe: Telefone
+-----------------
+string marca
+string tipoTela
+string modelo
+string resolucao
+float preço
+int tipoBateria
+------------------
+
+classe Cadeira:
+--------------------
+float altura
+float largura
+string material
+string encosto
+string categoria
+string marca
+boolean braços
+string regulavel
+
+
+classe: CarroRevenda
+------------------
+float preço
+
+
+
+classe: CarroLavacar
+------------------
+
+
+classe: CarroMontadora
+------------------
+
