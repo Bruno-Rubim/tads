@@ -31,8 +31,8 @@ public class Aluno{
         this.nome = n;
     }
 
-    public void setMatricula(String n){
-        this.nome = matricula;
+    public void setMatricula(String m){
+        this.matricula = m;
     }
 
     public void setNota1(float n){

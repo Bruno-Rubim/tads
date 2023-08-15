@@ -34,4 +34,8 @@ public class Escola {
             
         }
     }
+
+    public int getQntTurmas(){
+        return this.quantTurmas;
+    }
 }
