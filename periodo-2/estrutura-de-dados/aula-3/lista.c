@@ -12,7 +12,7 @@ void criarLista(tpLista lista){
     }
 }
 
-void insterirItem(tpLista lista, char *item){
+void inserirItem(tpLista lista, char *item){
     int i;
     for(i = 0; i < MaxItens && strlen(lista[i]) != 0; i++);
     if(!(i<MaxItens)){
@@ -52,13 +52,51 @@ void retirarItem(tpLista lista, char *item){
     }
 }
 
+void menu(int *exit, tpLista lista){
+    int resp = 0;
+    char item[TamItem];
+    puts("");
+    puts("Menu: ");
+    puts("0. Sair");
+    puts("1. Exibir lista");
+    puts("2. Inserir item na lista");
+    puts("3. Remover item da lista");
+    puts("");
+    scanf("%d", &resp);
+    puts("");
+    switch(resp){
+        case 0:
+            exit = 1;
+            break;
+        case 1:
+            exibirLista(lista);
+            break;
+        case 2:
+            puts("Digite o item a ser inserido:");
+            gets(item);
+            inserirItem(lista, &item);
+            break;
+        case 3:
+            puts("Digite o item a ser removido:");
+            gets(item);
+            retirarItem(lista, &item);
+            break;
+        default:
+            puts("Opcao invalida");
+            break;
+    }
+}
+
 int main (){
 
     tpLista l1;
-
     criarLista(l1);
+    puts("Lista criada");
 
-    puts("Menu: ");
+    int exit = 0;
+    while (!exit) {
+        menu(&exit, l1);
+    }
 
     return 0;
 }
