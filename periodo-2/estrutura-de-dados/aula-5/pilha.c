@@ -48,26 +48,27 @@ Pilha desempilhaElemento(Pilha p, int *e){
 }
 
 void menu(Pilha p){
+    int option = 1;
     int resp = 1;
-    while (resp){
+    while (option){
         puts("");
         puts("0 sair");
         puts("1 Empilhar");
         puts("2 Desempilhar");
         puts("3 Visualizar pilha");
-        scanf("%d", &resp);
+        scanf("%d", &option);
         puts("");
-        switch(resp){
+        switch(option){
             case 0: 
-                resp = 0;
+                option = 0;
                 break;
             case 1: 
-                puts("Insira o numero a ser empilhado:");
+                printf("Insira o numero a ser empilhado: ");
                 scanf("%d", &resp);
                 p = empilhaElemento(p, resp);
                 break;
             case 2: 
-                p = desempilhaElemento(p);
+                p = desempilhaElemento(p, &p->dado);
                 break;
             case 3: 
                 imprimePilha(p);
