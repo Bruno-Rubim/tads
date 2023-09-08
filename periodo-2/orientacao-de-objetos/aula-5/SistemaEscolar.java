@@ -16,7 +16,7 @@ public class SistemaEscolar {
         System.out.println("Insira o telefone da escola: ");
         se.e1.setTelefone(se.reader.readLine());
         se.menu();
-    }
+    }~
 
     //menu
     private void menu() throws Exception{
