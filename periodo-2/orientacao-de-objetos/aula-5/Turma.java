@@ -44,6 +44,6 @@ public class Turma{
     }
 
     public int getQntAlunos(){
-        return quantAlunos;
+        return this.quantAlunos;
     }
 }

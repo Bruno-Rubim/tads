@@ -7,48 +7,69 @@ typedef char tpLista[MaxItens][TamItem];
 
 void criarLista(tpLista lista){
     int i;
-    for(i = 0; i < MaxItens && strlen(lista[i]) != 0; i++){
+    for(i = 0; i < MaxItens; i++){
         lista[i][0] = '\0';
+    }
+}
+
+void removerEnter(char *string){
+    for(int i = 0; i < TamItem; i++){
+        if (string[i] == '\n'){
+            string[i] = '\0';
+        }
+    }
+}
+
+void exibirLista (tpLista lista){
+    puts("");
+    if (lista[0][0] == '\0') {
+        puts("Lista vazia");
+    } else {
+        for(int i = 0; i < MaxItens; i++){
+            if (lista[i][0] != '\0'){
+                puts(lista[i]);
+            }
+        }
     }
 }
 
 void inserirItem(tpLista lista, char *item){
     int i;
+    removerEnter(item);
+    puts("");
     for(i = 0; i < MaxItens && strlen(lista[i]) != 0; i++);
     if(!(i<MaxItens)){
         printf("Lista Cheia.");
     } else {
         strcpy(lista[i], item);
-        printf("Lista Cheia.");
+        printf("\nItem inserido na posicao %d.\n", i + 1);
     }
 }
 
-void exibirLista (tpLista lista){
-    for(int i = 0; i < MaxItens; i++){
-        for(int j = 0; j < TamItem; j++){
-            printf("%c", lista[i][j]);
-        }
-        printf("\n");
-    }
-}
 
 void contarItens(tpLista lista){
     int i;
     for(i = 0; i < MaxItens && strlen(lista[i]) != 0; i++);
-    printf("%d Itens na lista", i);
+    puts("");
+    printf("%d Itens na lista \n", i);
 }
 
 void retirarItem(tpLista lista, char *item){
-    int i;
-    for(i = 0; i < MaxItens && !(strcmp(lista[i], item)) && strlen(lista[i]); i++);
-    if (!(i < MaxItens)){
-        printf("Item não encontrado\n");
-    } else { 
-        printf("Item encontrado, removendo ...\n");
-        if (i < MaxItens - 1){
-            strcpy(lista[i], lista[i + 1]);
+    int i, found = 0;
+    removerEnter(item);
+    for (i=0; i<MaxItens; i++) {
+        if (!found){
+            found = strcmp(item, lista[i]) == 0;
         }
-        lista[i][0] = '\0';
+        if (found && i < MaxItens -1){
+            strcpy(lista[i], lista[i+1]);
+        }
+    }
+    if (found){
+        lista[MaxItens-1][0] = '\0';
+        puts("Item removido");
+    } else {
+        puts("Item nao encontrado");
     }
 }
 
@@ -61,25 +82,32 @@ void menu(int *exit, tpLista lista){
     puts("1. Exibir lista");
     puts("2. Inserir item na lista");
     puts("3. Remover item da lista");
+    puts("4. Contar itens");
     puts("");
-    scanf("%d", &resp);
-    puts("");
+    scanf("%d%*c", &resp);
     switch(resp){
         case 0:
-            exit = 1;
+            *exit = 1;
             break;
         case 1:
             exibirLista(lista);
             break;
         case 2:
+            puts("");
             puts("Digite o item a ser inserido:");
-            gets(item);
-            inserirItem(lista, &item);
+            puts("");
+            fgets(item, MaxItens, stdin);
+            inserirItem(lista, item);
             break;
         case 3:
+            puts("");
             puts("Digite o item a ser removido:");
-            gets(item);
-            retirarItem(lista, &item);
+            puts("");
+            fgets(item, MaxItens, stdin);
+            retirarItem(lista, item);
+            break;
+        case 4:
+            contarItens(lista);
             break;
         default:
             puts("Opcao invalida");
