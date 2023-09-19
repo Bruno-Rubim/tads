@@ -1,0 +1,133 @@
+1 Colocar as entidades abaixo abaixo na Primeira Forma Normal (atributos entre { } indicam repetição).
+
+a - Biblioteca
+Livro (id-livro, título, editora, endereço_editora, {id-autor, nome_autor})
+---
+Livro (id-livro, título, editora, endereço_editora)
+LivroAutor(id-livro*, id_autor, nome_autor)
+
+
+b - Controle de Projetos
+ProjetoEmpr (cd_proj, tipo, descrição, {cd_empregado, nome_empregado, categoria, salario, dt_início, dt_fim})
+---
+ProjetoEmpr (cd_proj, tipo, descrição, dt_início, dt_fim)
+EmpregadoProjeto(cd_proj*, cd_empregado, nome_empregado, categoria, salario)
+
+c - Sistema Escolar
+Aluno (matricula, nome_aluno, {cd_curso,ano_ingresso}, {cd_disc, nome_disc, {semestre_cursada, cd_prof, nome_prof}, nota-disc})
+---
+Aluno (matricula, nome_aluno)
+CursoAluno(matricula*, cd_curso, ano_ingresso)
+DisciplinaAluno(matricula*, cd_disc, nome_disc, nota-disc)
+SemestreDisciplina(cd_disc*, semestre_cursada, cd_prof, nome_prof)
+
+2  - Coloque as entidades abaixo na Segunda Forma Normal 
+
+a - Controle de Projetos
+ProjetoEmpr (cd_proj, tipo_proj, descrição_proj, {cd_empregado, nome_empr, cd_categoria_empr, descricao_categoria, salario_categoria, dt_início, dt_fim})
+---
+ProjetoEmpr (cd_proj, tipo_proj, descrição_proj, dt_início, dt_fim)
+Categoria(cd_categoria, descricao_categoria, salario_categoria)
+EmpregadoProjeto(cd_proj*, cd_empregado, nome_empr, cd_categoria*)
+
+
+b - Sistema Escolar
+Aluno (matricula,nome_aluno,cod_curso,nome_curso, {cod_disc, nome_disc, {ano_cursada, cod_prof_disc, nome_prof_disc}, nota_disc, freq._disc})
+---
+Aluno (matricula, nome_aluno, cod_curso, nome_curso)
+AlunoDisciplina (matricula*, cod_disc,  nome_disc, nota_disc, freq._disc)
+ProfessorAlunoDisciplina (cod_disc, cod_prof, nome_prof_disc)
+AnoCursadaDisciplina (cod_disc*, ano_cursada)
+
+3  - Coloque as entidades abaixo na Terceira Forma Normal
+
+a - Folha de Pagamento
+Funcionario (cd_funcionario, nome_func,endereço_func, dt_nasc_func, {cd_cargo, nome_cargo, dt_inicio,dt_fim},{ dt_pagto,func_cd_banco, func_nome_banco, valor_pagtobruto, total_descontos, valor_pagto_liquido})
+---
+Funcionario (cd_funcionario, nome_func, endereço_func, dt_nasc_func,)
+CargoFuncionario(cd_funcionario*, cd_cargo, nome_cargo, dt_inicio,dt_fim)
+PagamentoFuncionario(cd_funcionario*, cd_pagamento, dt_pagto, valor_pagtobruto, total_descontos, valor_pagto_liquido)
+BancoFuncionario(cd_funcionario*, func_cd_banco, func_nome_banco)
+
+b - Clínica Médica
+Médico (CRM, med_nome, med_telefone, {cod_paciente, nome_paciente, cd_convenio, descrição_convenio, dt_atendimento, med_hora_atendimento, valor_consulta, valor_multa, valor_total_consulta})
+---
+Convenio (cd_convenio, descrição_convenio)
+Médico (CRM, med_nome, med_telefone)
+MedicoPaciente (CRM*, cod_paciente, nome_paciente, cd_convenio*, dt_atendimento, med_hora_atendimento, valor_consulta, valor_multa, valor_total_consulta)
+
+4 - Para os exercícios a seguir, faça a Normalização (1FN, 2FN, 3FN). Indique as transformações, qual forma normal e justifique:
+
+a -
+Empregado (matricula_empregado, Nome_Empregado, Num_depto, Nome_depto, cd_Gerente, Nome_Gerente, cd_Projeto, Nome_Projeto, dt_Início_Projeto, horas_trabalhadas_projeto).
+---
+Departamento (Num_depto, Nome_depto,)
+Gerente (cd_Gerente, Nome_Gerente)
+Projeto (cd_Projeto, Nome_Projeto, dt_Início_Projeto, horas_trabalhadas_projeto)
+Empregado (matricula_empregado, Nome_Empregado, Num_depto* cd_Gerente*, cd_Projeto*).
+3FN Multiplos atributos dependendo de outros atributos
+
+b -
+Ordem_Compra (cd_ord_comp, dt_emissão, cd_fornecedor, nome_fornecedor, endereço_fornecedor, {cd_material}, {descrição_material}, {qtde_comprada}, {valor_unitário}, valor_total_item (n vezes), valor_total_ordem).
+---
+Fornecedor(cd_fornecedor, nome_fornecedor, endereço_fornecedor)
+Material(cd_material, descrição_material)
+Item(cd_item, cd_material*, qtde_comprada, valor_unitário, valor_total_item)
+Ordem_Compra (cd_ord_comp, dt_emissão, cd_fornecedor*, {cd_item*}, valor_total_ordem)
+1FN Um valor multivalorado
+3FN Multiplos atributos dependendo de outros atributos
+
+c -
+tbNotas_Fiscais (Num_NF, Série, Dt_emissão, Cd_Cliente, Nome_cliente, Endereço_cliente, CGC_cliente, Cd_Mercadoria, Descrição_Mercadoria, Qde_vendida, Preço_ venda, valor_venda , valor_Mercadoria, valor_Nota).
+//Cada nota pode ter mais do que uma mercadoria.
+---
+tbCliente(Cd_Cliente, Nome_cliente, Endereço_cliente, CGC_cliente)
+tbNotas_Fiscais (Num_NF, Série, Dt_emissão, Cd_Cliente*, valor_Nota).
+tbMercadoriaNotas(Num_NF*, Cd_Mercadoria, Descrição_Mercadoria, Qde_vendida, valor_Mercadoria, Preço_ venda, valor_venda)
+1FN Um valor multivalorado
+3FN Multiplos atributos dependendo de outros atributos
+
+
+d -
+Inscrição (Cd_Aluno, Nome_Aluno, {Telefone}, Ano_Admissão, Cd_Disciplina, Nome_Disciplina, Nome_Curso, Dt_Matricula).
+---
+Aluno(Cd_Aluno, Nome_Aluno, Ano_Admissão)
+TelefoneAluno(Cd_Aluno, Telefone)
+Disciplina(Cd_Disciplina, Nome_Disciplina)
+Inscrição (Cd_Aluno*, Cd_Disciplina*, Nome_Curso, Dt_Matricula).
+1FN Um valor multivalorado
+3FN Multiplos atributos dependendo de outros atributos
+
+e -
+Paciente (num_paciente, nome_paciente, num_quarto, descrição_quarto, num_cômodos_quarto, {cód_médico, nome_médico, fone_médico}).
+---
+Quarto(num_quarto, descrição_quarto, num_cômodos_quarto)
+Paciente (num_paciente, nome_paciente, num_quarto*).
+MedicoPaciente(num_paciente*, cód_médico, nome_médico, fone_médico)
+1FN Tabela multivalorada
+3FN Atributos dependendo de outros atributos
+
+5 - Dadas Dependências e PK entre colchetes [], indique em que forma normal se encontra e realize a
+Normalização até a 3FN:
+X -> Y (lê-se Y depende de X)
+
+//Fiquei uma meia hora olhando pra isso e ainda não entendi
+
+a - ([A],B,C)
+A -> B
+B -> C
+
+b - ([X],[Y],Z,T,K)
+X -> Z
+X, Y -> T, K
+
+c - ([T],[W],K,M,N)
+T -> K
+W ->  M
+T,W -> N
+
+
+Referências:
+http://www.inf.unioeste.br/~clodis/BDI/Exer_normalizacao.pdf
+http://vivacquabd.webnode.com.br/administra%C3%A7%C3%A3o%20de%20banco%20de%20dados/
+https://www.windows93.net/
