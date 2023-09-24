@@ -27,6 +27,7 @@ $desenvolvedora = "";
 $genero = "";
 $nota = "";
 $review = "";
+$msgErro = "";
 
 if (isset($_POST['submetido'])) {
     $titulo = $_POST['titulo'];
@@ -40,7 +41,7 @@ if (isset($_POST['submetido'])) {
         $msgErro = 'Informe o título';
     } else if (!$genero){
         $msgErro = 'Informe o gênero';
-    } else if ($nota < 1){
+    } else if (!$nota){
         $msgErro = 'Informe a nota';
     } else if (!$desenvolvedora){
         $msgErro = 'Informe a desenvolvedora';
@@ -73,10 +74,12 @@ if (isset($_POST['submetido'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro jogos</title>
+    <title>Review jogos</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Cadastro de Jogos</h1>
+    <h1>Review de Jogos</h1>
+    <h6>De Bruno Rubim & Mickael Leonardo</h6>
     <h3>Formulario de Jogos</h3>
     <form action="" method="POST">
         <input type="text" name="titulo" placeholder="Título" value="<?= $titulo?>">
@@ -101,7 +104,7 @@ if (isset($_POST['submetido'])) {
         
         <br><br>
         
-        <textarea name="review" value="<?= $review?>" rows="20" cols="70" placeholder="Sua review..."></textarea>
+        <textarea name="review" value="<?= $review?>" rows="20" cols="50" placeholder="Sua review..."></textarea>
         
         <br><br>
         <input type="hidden" name="submetido" value="1">
@@ -117,11 +120,11 @@ if (isset($_POST['submetido'])) {
     <h3>Listagem de Jogos</h3>
     <table border="5px">
         <tr>
-            <td>Titulo</td>
-            <td>Genero</td>
-            <td>Desenvolvedora</td>
-            <td>Nota</td>
-            <td>Review</td>
+            <th>Titulo</th>
+            <th>Genero</th>
+            <th>Desenvolvedora</th>
+            <th>Nota</th>
+            <th>Review</th>
         </tr>
         <?php foreach($jogos as $jogo): ?>
             <tr>
@@ -143,13 +146,10 @@ if (isset($_POST['submetido'])) {
                     }?></td>
                 <td><?= $jogo['desenvolvedora']?></td>
                 <td><?= $jogo['nota']?></td>
-                <td><?= $jogo['review']?></td>
+                <td>Review: <br><?= $jogo['review']?></td>
                 <td><a href="jogosDel.php?id=<?= $jogo['id']?>">Excluir</a></td>
             </tr>
         <?php endforeach; ?>
     </table>
-    <br>
-    <br>
-    <h5>Bruno Rubim & Mickael Leonardo</h5>
 </body>
 </html>
