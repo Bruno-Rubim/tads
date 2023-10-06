@@ -9,6 +9,7 @@ public class SistemaTransp{
     public static void main(String args[]) throws Exception{
         SistemaTransp st = new SistemaTransp();
         st.keyboardReader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Bem vindo ao sistema de importacoes.");
         String configFile = ("../csv/" + st.solicitarArquivo(st.keyboardReader, "configuracao"));
         st.readerConfigFile = new BufferedReader(new FileReader(configFile));
 
@@ -34,6 +35,7 @@ public class SistemaTransp{
         while(choice != 0){
             System.out.println("");
             System.out.println("--Menu--");
+            System.out.println("");
             System.out.println("0. Sair");
             System.out.println("1. Importar arquivo de encomendas");
             System.out.println("2. Exibir a lista de encomendas Normais");
@@ -42,9 +44,15 @@ public class SistemaTransp{
             System.out.println("");
             
             switch(choice){
+                case 0:
+                    System.out.println("Saindo...");
+                    break;
                 case 1:
                     dataFile = ("../csv/" + st.solicitarArquivo(st.keyboardReader, "dados"));
                     trsp.importarDados(dataFile);
+                    System.out.println("");
+                    System.out.println("Total de encomendas: " + trsp.getNumTotal());
+                    System.out.println("Peso total de encomendas: " +  String.format("%.02f", trsp.getPesoTotal()));
                     break;
                 case 2:
                     trsp.imprimirEncomendasNormais();
@@ -53,6 +61,7 @@ public class SistemaTransp{
                     trsp.imprimirEncomendasEspressas();
                     break;
                 default:
+                    System.out.println("Comando nao encontrado.");
                     break;
             }
         }
